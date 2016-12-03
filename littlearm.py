@@ -9,7 +9,7 @@ import serial.tools.list_ports
 
 #+++++++++++++Global Variables+++++++++++++++++++++
 
-ser = serial.Serial('/dev/cu.wchusbserial620', 9600)
+ser = serial.Serial('/dev/ttyUSB0', 9600)
 
 #Find the serial port that the arduino is connected to
 
@@ -22,7 +22,7 @@ def move_it(aCommand):
 
     ser.flushInput()
     ser.flushOutput()
-    command = str(base.get()) + ',' + str(shoulder.get()) +   ',' + str(elbow.get())+','+ str(gripper.get())+','+ str(21 - theSpeed.get()) + '\n'
+    command = 'A,'+str(base.get()) + ',' + str(shoulder.get()) +   ',' + str(elbow.get())+','+ str(gripper.get())+','+ str(21 - theSpeed.get()) + '\n'
     print command
     ser.write(command)
 
