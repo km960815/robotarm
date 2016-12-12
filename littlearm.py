@@ -1,5 +1,6 @@
 #This program has a complete set of commands for most behaviors
-#an improvement to the software would be for the arduino to wait until completion of the execution of the command before sending a ready signal
+#an improvement to the software would be for the arduino to wait until completion of the execution of the command before sending a ready signal#
+#yang
 
 from Tkinter import *
 import tkMessageBox
