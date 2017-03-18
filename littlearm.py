@@ -10,10 +10,16 @@ import serial.tools.list_ports
 
 #+++++++++++++Global Variables+++++++++++++++++++++
 
-ser = serial.Serial('/dev/ttyUSB0', 9600)
-
-#Find the serial port that the arduino is connected to
-
+#ser = serial.Serial('COM6', 9600)
+                      
+#Find the serial port that the Robinhuang is connected to
+ports = list(serial.tools.list_ports.comports())
+for p in ports:
+#	print p[1] 
+	if "CH340" in p[1]:
+		ser = serial.Serial(p[0],9600)
+	else:
+		print ("Not found")
 #++++++++++++++++Functions+++++++++++++++++++++++
 
 def move_it(aCommand):
